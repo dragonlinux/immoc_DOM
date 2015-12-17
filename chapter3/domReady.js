@@ -1,14 +1,14 @@
-function myReady(fn){
+function myReady(fn) {
 
     //对于现代浏览器，对DOMContentLoaded事件的处理采用标准的事件绑定方式
-    if ( document.addEventListener ) {
+    if (document.addEventListener) {
         document.addEventListener("DOMContentLoaded", fn, false);
     } else {
         IEContentLoaded(fn);
     }
 
     //IE模拟DOMContentLoaded
-    function IEContentLoaded (fn) {
+    function IEContentLoaded(fn) {
         var d = window.document;
         var done = false;
 
@@ -34,7 +34,7 @@ function myReady(fn){
         })();
 
         //监听document的加载状态
-        d.onreadystatechange = function() {
+        d.onreadystatechange = function () {
             // 如果用户是在domReady之后绑定的函数，就立马执行
             if (d.readyState == 'complete') {
                 d.onreadystatechange = null;
